@@ -37,27 +37,7 @@ function isOwner() {
         return function (req, res, next) {
 
             const { request_by } = req.body;
-            const id = req.params.id * 1;
-            const blog = blogs.find(
-                (blog) => blog.id === id
-            );
-            if(blog){
-                const creator_id = blog.creator_id;
-                if (request_by != creator_id) {
-                    return res.status(403).json({
-                        status: "Failed",
-                        message: "Access Denied"
-                    })
-                } else {
-                    next();
-                }
-            } 
-            else{
-                return res.status(404).send({
-                    status: "Failed",
-                    message: "Blog not found!",
-                  });
-            }
+            
         }
 
     } catch (err) {
