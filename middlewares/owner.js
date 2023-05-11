@@ -32,19 +32,15 @@ json = {
 
 */
 
-function isOwner() {
+async function isOwner(req, res, next) {
     try {
-        return function (req, res, next) {
+            //Write your code here.
 
-            const { request_by } = req.body;
-            
-        }
-
-    } catch (err) {
-        return res.status(400).json({
-            status: "Failed",
-            message: "Unable to check access level"
-        })
+        }catch (err) {
+            return res.status(500).json({
+                status: "Failed",
+                message: "Unable to check access level"
+        });
     }
 }
 
