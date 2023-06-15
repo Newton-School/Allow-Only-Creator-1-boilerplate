@@ -43,7 +43,7 @@ app.post("/api/v1/blogs", (req, res) => {
 });
 
 
-app.patch("/api/v1/blogs/:id", isOwner(), (req, res) => {
+app.patch("/api/v1/blogs/:id", isOwner, (req, res) => {
 
   const id = req.params.id * 1;
   const updatedDetails = blogs.find(
@@ -74,7 +74,7 @@ app.patch("/api/v1/blogs/:id", isOwner(), (req, res) => {
 });
 
 
-app.delete("/api/v1/blogs/:id", isOwner(), (req, res) => {
+app.delete("/api/v1/blogs/:id", isOwner, (req, res) => {
   const id = req.params.id * 1;
   const userDetailToDelete = blogs.find(
     (detailTODelete) => detailTODelete.id === id
